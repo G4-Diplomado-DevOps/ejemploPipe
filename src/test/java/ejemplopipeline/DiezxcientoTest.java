@@ -14,15 +14,21 @@ public class DiezxcientoTest {
 
 	@Test
 	public void testImpuesto() throws Exception {
-		Diezxciento diezxciento = new Diezxciento(23000000,900000);
-		assertEquals(0, diezxciento.impuesto());
+		
+		Diezxciento saldo = new Diezxciento(23000000,900000);
+		assertEquals(0, saldo.impuesto());
+
+		saldo = new Diezxciento(23000000,2150000);
+		assertEquals(115000, saldo.impuesto());
+
+		saldo = new Diezxciento(23000000,4300000);
+		assertEquals(184000, saldo.impuesto());
 	}
 
 	@Test
 	public void testSaldoAhorro() throws Exception {
-		Diezxciento diezxciento = new Diezxciento(23000000,900000);
-		assertEquals(2070000, diezxciento.saldoAhorro());
-
+		Diezxciento saldo = new Diezxciento(23000000,900000);
+		assertEquals(20700000, saldo.saldoAhorro());
 	}
 
 }
